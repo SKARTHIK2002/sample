@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Dropdown</title>
+    <style>
+        .dropdown {
+            font-family: Arial, sans-serif;
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #a8d8ff;
+            border-radius: 3px;
+        }
+        
+        .dropdown-header {
+            background-color: #e6f4ff;
+            padding: 10px 15px;
+            color: #333;
+            font-weight: normal;
+            border-bottom: 1px solid #a8d8ff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .dropdown-header:after {
+            content: "▼";
+            font-size: 12px;
+        }
+        
+        .dropdown-content {
+            display: none;
+        }
+        
+        .dropdown-content.active {
+            display: block;
+        }
+        
+        .dropdown-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #a8d8ff;
+            color: #333;
+        }
+        
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <div class="dropdown-header">Others services</div>
+        <div class="dropdown-content">
+            <div class="dropdown-item">Allergology</div>
+            <div class="dropdown-item">Pathology</div>
+            <div class="dropdown-item">Anaesthesia and Resuscitation</div>
+            <div class="dropdown-item">Angiology / Vascular Surgeon</div>
+            <div class="dropdown-item">Clinical Analysis</div>
+            <div class="dropdown-item">Apoptosis Celular</div>
+            <div class="dropdown-item">Social assistance</div>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript to toggle the dropdown
+        const dropdownHeader = document.querySelector('.dropdown-header');
+        const dropdownContent = document.querySelector('.dropdown-content');
+        
+        dropdownHeader.addEventListener('click', function() {
+            dropdownContent.classList.toggle('active');
+            
+            // Change arrow direction
+            if (dropdownContent.classList.contains('active')) {
+                dropdownHeader.style.setProperty('--arrow', '▲');
+            } else {
+                dropdownHeader.style.setProperty('--arrow', '▼');
+            }
+        });
+    </script>
+</body>
+</html>
